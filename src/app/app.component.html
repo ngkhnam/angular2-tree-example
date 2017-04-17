@@ -2,7 +2,12 @@
     <div>Display and filter large tree: 5000 node</div>
     <input type="text" style="width: 300px; margin: 5px 0" [(ngModel)]="value" (ngModelChange)="onChangeText()">
     <div style="border: 1px solid black; width: 300px">
-        <nn-tree #displayFilterTree [root]="displayFilerRoot" [showRoot]="true" [height]="250" [width]="300">
+        <nn-tree #displayFilterTree [root]="displayFilerRoot" 
+            [showRoot]="true" 
+            [height]="250" 
+            [width]="300"
+            [canSelect]="canSelectNode"
+            [selectionMode]="'multiple'">
             <ng-template let-node="node" #nnTreeItem>
                 <nn-tree-item [node]="node"></nn-tree-item>
             </ng-template>
@@ -17,4 +22,5 @@
             </ng-template>
         </nn-tree>
     </div>
+    <input type="checkbox" (change)="($event.target.checked)" value="123123" >
 </div>
